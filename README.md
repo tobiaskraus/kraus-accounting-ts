@@ -51,8 +51,27 @@ If I split my application into a web client and an API Server, then I would pref
 ## 🧰 Development Setup
 
 ```bash
+# Install all dependencies (for all packages in monorepo)
 pnpm install
 
-# run dev server
+# Run both frontend and backend dev servers
 pnpm run dev
+
+# Or run them individually:
+pnpm --filter @kraus-accounting/api dev   # Backend on http://localhost:3001
+pnpm --filter @kraus-accounting/web dev   # Frontend on http://localhost:5173
 ```
+
+The frontend will automatically connect to the backend API via tRPC.
+
+## 📁 Project Structure
+
+```
+apps/
+  web/     - React + TypeScript + Vite frontend
+  api/     - Bun + tRPC backend
+packages/
+  shared/  - Shared TypeScript types
+```
+
+See [docs/tech-decisions.md](docs/tech-decisions.md) for architecture decisions.

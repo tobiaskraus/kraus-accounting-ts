@@ -2,10 +2,11 @@
     "name": "kraus-accounting-ts",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "private": true,
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "format:write": "pnpm prettier . --write"
+        "dev": "pnpm --parallel --filter \"@kraus-accounting/*\" dev",
+        "format:write": "pnpm prettier . --write",
+        "type:check": "pnpm --parallel --filter \"@kraus-accounting/*\" type:check"
     },
     "keywords": [],
     "author": "",
