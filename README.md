@@ -62,12 +62,17 @@ See more in [tech-decisions.md](./docs/tech-decisions.md).
 # Install all dependencies (for all packages in monorepo)
 pnpm install
 
+# Set up environment variables (optional - defaults are provided)
+# Copy .env.example files and customize ports if needed:
+cp apps/api/.env.example apps/api/.env
+cp apps/web/.env.example apps/web/.env
+
 # Run both frontend and backend dev servers
 pnpm run dev
 
 # Or run them individually:
-pnpm --filter @kraus-accounting/api dev   # Backend on http://localhost:3001
-pnpm --filter @kraus-accounting/web dev   # Frontend on http://localhost:5173
+pnpm --filter @kraus-accounting/api dev   # Backend (default: http://localhost:26270)
+pnpm --filter @kraus-accounting/web dev   # Frontend (default: http://localhost:26271)
 ```
 
 The frontend will automatically connect to the backend API via tRPC.

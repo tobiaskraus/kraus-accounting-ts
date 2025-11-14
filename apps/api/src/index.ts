@@ -4,7 +4,8 @@ import { appRouter } from "./router.js";
 // Re-export types for frontend
 export type { AppRouter } from "./router.js";
 
-const PORT = 3001;
+const PORT = parseInt(process.env.PORT || "26270", 10);
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:26271";
 
 // Create server
 const server = Bun.serve({
@@ -15,7 +16,7 @@ const server = Bun.serve({
             return new Response(null, {
                 status: 204,
                 headers: {
-                    "Access-Control-Allow-Origin": "http://localhost:5173",
+                    "Access-Control-Allow-Origin": FRONTEND_URL,
                     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
                     "Access-Control-Allow-Headers": "Content-Type",
                 },
@@ -31,7 +32,7 @@ const server = Bun.serve({
         });
 
         // Add CORS headers
-        response.headers.set("Access-Control-Allow-Origin", "http://localhost:5173");
+        response.headers.set("Access-Control-Allow-Origin", FRONTEND_URL);
         response.headers.set("Access-Control-Allow-Credentials", "true");
 
         return response;
