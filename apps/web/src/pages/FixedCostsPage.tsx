@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useTRPC } from "../trpc.js";
 import type { Assignee, FixedCost } from "@kraus-accounting/shared";
+import { Button } from "@/components/ui/button.js";
 
 function getCurrentPeriod(fixedCost: FixedCost) {
     const now = new Date();
@@ -54,6 +55,8 @@ export default function FixedCostsPage() {
     return (
         <div>
             <h2>Fixed Costs</h2>
+
+            <Button>Click me</Button>
 
             <div
                 style={{ marginBottom: "20px", display: "flex", gap: "10px", alignItems: "center" }}

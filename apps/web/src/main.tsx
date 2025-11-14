@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TRPCProvider } from "./trpc.js";
 import { trpcClient } from "./trpcClient.js";
 import App from "./App.js";
+import "./index.css";
 
 const queryClient = new QueryClient();
 
