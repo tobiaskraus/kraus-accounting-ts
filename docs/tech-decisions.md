@@ -36,6 +36,16 @@ packages/
 
 **Future**: Will migrate to SQLite or PostgreSQL with Drizzle ORM when ready for persistence.
 
+## Client Side rendering
+
+**Decision**: Client side rendering (not server side)
+
+**Rationale**:
+
+- I don't need SEO (no public pages)
+- a lot of client dynamic UI features like filtering results in a view etc.
+- as a private person, I want to keep server costs really low. Server side rendering has higher server costs due to higher RAM and CPU usage
+
 ## API Layer
 
 **Decision**: tRPC for end-to-end type safety
@@ -47,6 +57,11 @@ packages/
 - Compile-time error checking for API calls
 - Simpler than REST with GraphQL complexity
 - Works well with TypeScript monorepo setup
+- **Not Next.js** cause:
+    - this project doesn't need Server Rendering (no SEO) - it's a classical client side app
+    - Next.js is more expensive to run (RAM & CPU)
+    - Next.js locks me in. It's style of writing code is really specific
+    - Curiousity: I just want to try out tRPC rather than Next.js
 
 ## Frontend Stack
 

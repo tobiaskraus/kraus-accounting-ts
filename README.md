@@ -2,6 +2,9 @@
 
 A lightweight, self-hosted web app for managing and visualizing personal and family finances — built from scratch for full data ownership and flexibility.
 
+It is specialized on my needs, and doesn't attempt to fulfill needs of other users.
+So features like i18n (e.g. currencies other than €), signup, etc. will probably never get implemented.
+
 ## 🧭 Overview
 
 This project aims to replace Google Spreadsheets as my main accounting and finance-tracking tool.
@@ -19,6 +22,7 @@ The app will manage several key data domains:
 - **Extra Costs** – one-time or unusual transactions (renovations, gifts, etc.).
 - **Vacations** – cost breakdowns per trip.
 - **Overview Dashboard** – combined view of income vs. expenses per person and per family.
+- **Reports** - yearly and monthly reports
 
 ## 🎯 Goals
 
@@ -32,7 +36,9 @@ The app will manage several key data domains:
 
 - Works on desktop and mobile (long term)
 - imports from banks, depots, finanzguru, ...
-- Progressive Web App (PWA) or react Native for mobile use
+- mobile:
+    - Progressive Web App (PWA) for the beginning (same code base: /apps/web)
+    - react Native maybe later (new app in /apps) if it's worth the extra maintenance
 
 ## 🏗️ Planned Tech Stack (tentative)
 
@@ -46,7 +52,9 @@ this is just a rough idea. Maybe there is a better suited or even simpler tech s
 - **Charts:** Recharts or Chart.js
 - **Hosting:** Self-hosted (maybe GCP or I buy a instance on Hetzner later)
 
-If I split my application into a web client and an API Server, then I would prefer a monorepo.
+If I split my application into a web client and an API Server, then I prefer a monorepo.
+
+See more in [tech-decisions.md](./docs/tech-decisions.md).
 
 ## 🧰 Development Setup
 
@@ -73,5 +81,3 @@ apps/
 packages/
   shared/  - Shared TypeScript types
 ```
-
-See [docs/tech-decisions.md](docs/tech-decisions.md) for architecture decisions.
